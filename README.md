@@ -23,20 +23,32 @@ Explain how to use it.
 
 ### Configuring it for your own use
 
+after setting the path, you can start using it directly.  
+
+add following lines to your `.bashrc`
+```
+export PATH=[the directory of the excuteble]:$PATH
+```
+
 first test can it run properly:
   
 Linux example
 
 ```bash
-dotnet gpcli.dll config set path '/home/user/GoPractice,Root directory of the GoPractice folder'
+gpcli config set path '/home/user/GoPractice,Root directory of the GoPractice folder'
 ```
   
 windows example
 
 ```bash
-gpcli.dll config set path 'C:/Users/user/Documents/Gopractice,Root directory of the GoPractice folder'
+gpcli.exe config set path 'C:/Users/user/Documents/Gopractice,Root directory of the GoPractice folder'
 ```
-after setting the path, you can start using.  
+
+### Initialize a practice directory to start using it
+
+```bash
+gpcli init
+```
 
 ### Creat or Edit a report
 
