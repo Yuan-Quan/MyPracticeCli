@@ -70,12 +70,12 @@ namespace GoPracticeCli
             {
                 if (!File.Exists(@$"{path}/README.md"))
                 {
-                    client.DownloadFile("https://raw.githubusercontent.com/Yuan-Quan/GoPractice/master/src/templates/README.md", @$"{path}/README.md");
+                    client.DownloadFile("https://raw.githubusercontent.com/Yuan-Quan/MyPractice/master/src/templates/README.md", @$"{path}/README.md");
                 }
 
                 if (!File.Exists(@$"{path}/sec/templates/DailyReport.md"))
                 {
-                    client.DownloadFile("https://raw.githubusercontent.com/Yuan-Quan/GoPractice/master/src/templates/DailyReport.md", @$"{path}/src/templates/DailyReport.md");
+                    client.DownloadFile("https://raw.githubusercontent.com/Yuan-Quan/MyPractice/master/src/templates/DailyReport.md", @$"{path}/src/templates/DailyReport.md");
                 }
             }
 
