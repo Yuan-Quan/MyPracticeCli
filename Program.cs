@@ -13,8 +13,7 @@ namespace GoPracticeCli
         static void Startup()
         {
            //debug code here
-            var m = new MainEntry();
-            m.Initialize();
+            
         }
         static int Main(string[] args)
         {
