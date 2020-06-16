@@ -258,7 +258,7 @@ namespace GoPracticeCli
                 {
                     preForegroundColor = Console.ForegroundColor;
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("WRONG PATH!! Have you set the right path in app.config???");
+                    Console.Write("WRONG PATH!! Have you set the right path in app.config???\nyou can use \'config set path [path]\' to specify it.");
                     System.Console.WriteLine();
                     Console.ForegroundColor = preForegroundColor;
                     throw;
