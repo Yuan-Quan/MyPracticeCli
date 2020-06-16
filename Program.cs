@@ -260,7 +260,22 @@ namespace GoPracticeCli
                     Console.Write("WRONG PATH!! Have you set the right path in app.config???\nyou can use \'config set path [path]\' to specify it.");
                     System.Console.WriteLine();
                     Console.ForegroundColor = preForegroundColor;
-                    throw;
+                    //is this directory contains src/ ... if so, it can be a practice recorder
+                    bool IsADirectory = File.Exists(@$"{Path.Combine(Directory.GetCurrentDirectory(),@"/src")}")&&File.Exists(@$"{Path.Combine(Directory.GetCurrentDirectory(),@"/README.md")}");
+                    if (IsADirectory)
+                    {
+                        System.Console.WriteLine("Current directory looks like a practice recorder, would you like to set this as the path?");
+                        System.Console.Write("Yes or No? >");
+                        var entry = Console.ReadLine();
+                        if (entry == "yes" || entry == "Yes" || entry == "YES")
+                        {
+                            MyUtil.AddUpdateAppSettings("path", $"{Directory.GetCurrentDirectory()}");
+                        }else
+                        {
+                            return;
+                        }
+                    }
+                    //throw;
                 }
 
 
