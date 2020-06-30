@@ -1,10 +1,4 @@
-﻿using System;
-using System.IO;
-using CommandDotNet;
-using ConsoleTables;
-using GoPractice.MyUtil;
-using System.Collections.Generic;
-using System.Net;
+﻿using CommandDotNet;
 
 namespace GoPracticeCli
 {
