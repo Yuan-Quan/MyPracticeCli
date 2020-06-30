@@ -113,7 +113,8 @@ using System.Net;
         ExtendedHelpText = "creat a new report,\nspecify [date] to customize the file name.\ncustom template or file path not implemented")]
         [Obsolete]
         public void CreatNewReport(
-            [Option(ShortName = "d")]string date = null
+            [Option(ShortName = "d")]string date = null,
+            [Option(ShortName = "t")]string title = null
             )
         {
             DateTime dateTime;
@@ -272,7 +273,7 @@ using System.Net;
                 }
 
                 //creat corresponding link in the README
-                LinkAReport(date);
+                LinkAReport(date, null, title);
 
                 //auto select newly created report 
                 System.Console.WriteLine("will auto select newly generated one.");
@@ -595,11 +596,16 @@ using System.Net;
 
         public void LinkAReport(
             string file = null,
-            string date = null
+            string date = null,
+            string title = null
         )
             {
                 DateTime dt = DateTime.Today;
                 System.Console.WriteLine();
+                if (title == null)
+                {
+                    System.Console.WriteLine("No title specified, will use 'done', pass -t 'tilte' to set it.");
+                }
                 if (file == null)
                 {
                     System.Console.WriteLine("No file specified, will use selected file:");
@@ -687,7 +693,7 @@ using System.Net;
                     throw new NotImplementedException();
                 }
                 var s = new List<string>(MyUtil.ReadFrom($@"{MyUtil.ReadSetting("path").Split(',')[0]}/" + "README.md"));
-                s[lineToChange -1] = MyUtil.GenerateAListRow(dt,file);
+                s[lineToChange -1] = MyUtil.GenerateAListRow(dt,file,title);
 
                 MyUtil.WriteAFile(s, @$"{MyUtil.ReadSetting("path").Split(',')[0]}/", "README.md");
             }

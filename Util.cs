@@ -509,9 +509,9 @@ namespace GoPractice.MyUtil
             return new DateTime(y, m, d);
         } 
 
-        public static string GenerateAListRow(DateTime dt, string recordName)
+        public static string GenerateAListRow(DateTime dt, string recordName, string title)
         {
-            return $"__{WkdToString(dt.DayOfWeek)}__ | __[Done](/src/records/{recordName}.md)__";
+            return $"__{WkdToString(dt.DayOfWeek)}__ | __[{title}](/src/records/{recordName}.md)__";
         }
 
         public static int GetLineToInsert(DateTime dt)
